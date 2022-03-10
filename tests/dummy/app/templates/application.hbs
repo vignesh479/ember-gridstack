@@ -20,57 +20,122 @@
     </a>
   </Nav.Right>
 </DenaliNavbar>
-
+<div>
+  <button class="float-right m-5 btn btn-primary" style="font-size: 12px;">Reorder</button>
+</div>
 <div class="flex h-minus-nav overflow-y-auto">
   <div class="container-full m-t-60 w-full overflow-auto">
     <GridStack
       @onChange={{fn (mut this.test) true}}
-      @options={{hash float=this.shouldFloat staticGrid=false doAnimate=true}}
+      @options={{hash
+        float=this.shouldFloat
+        disableResize=true
+        staticGrid=false
+        doAnimate=true
+        resizable=(hash autoHide=false handles="all")
+      }}
     >
-      <GridStackItem @options={{hash x=4 y=0 w=4 h=1}}>
+      <GridStackItem
+        @options={{hash x=4 y=0 w=4 h=1}}
+        @onGridClick={{this.clicked}}
+        @onGridDrag={{this.dragged}}
+        @clickWid={{this.clickWid}}
+        @draggedWid={{this.draggedWid}}
+      >
         <h1>Welcome To</h1>
       </GridStackItem>
 
-      <GridStackItem @options={{hash x=3 y=1 w=3 h=2}}>
-        <img src="{{this.rootURL}}img/ember-logo.svg" alt="ember">
+      <GridStackItem
+        @options={{hash x=3 y=1 w=3 h=2}}
+        @onGridClick={{this.clicked}}
+        @onGridDrag={{this.dragged}}
+        @clickWid={{this.clickWid}}
+        @draggedWid={{this.draggedWid}}
+      >
+        <img src="{{this.rootURL}}img/ember-logo.svg" alt="ember" />
       </GridStackItem>
 
-      <GridStackItem @options={{hash x=6 y=2 w=3 h=2}}>
+      <GridStackItem
+        @options={{hash x=6 y=2 w=3 h=2}}
+        @onGridClick={{this.clicked}}
+        @onGridDrag={{this.dragged}}
+        @clickWid={{this.clickWid}}
+        @draggedWid={{this.draggedWid}}
+      >
         <h2>Gridstack</h2>
       </GridStackItem>
 
-      <GridStackItem @options={{hash x=0 y=0 w=2 h=2}}>
-        <img src="{{this.rootURL}}img/ember-icon.svg" alt="ember icon">
+      <GridStackItem
+        @options={{hash x=0 y=0 w=2 h=2}}
+        @onGridClick={{this.clicked}}
+        @onGridDrag={{this.dragged}}
+        @clickWid={{this.clickWid}}
+        @draggedWid={{this.draggedWid}}
+      >
+        <img src="{{this.rootURL}}img/ember-icon.svg" alt="ember icon" />
       </GridStackItem>
 
-      <GridStackItem @options={{hash x=10 y=3 w=2 h=2}}>
-        <img src="{{this.rootURL}}img/ember-tomster-lockup.svg" alt="tomster">
+      <GridStackItem
+        @options={{hash x=10 y=3 w=2 h=2}}
+        @onGridClick={{this.clicked}}
+        @onGridDrag={{this.dragged}}
+        @clickWid={{this.clickWid}}
+        @draggedWid={{this.draggedWid}}
+      >
+        <img src="{{this.rootURL}}img/ember-tomster-lockup.svg" alt="tomster" />
       </GridStackItem>
 
-      <GridStackItem @options={{hash x=10 y=0 w=2 h=2}}>
-        <img src="{{this.rootURL}}img/gridstack-logo.svg" alt="gridstack">
+      <GridStackItem
+        @options={{hash x=10 y=0 w=2 h=2}}
+        @onGridClick={{this.clicked}}
+        @onGridDrag={{this.dragged}}
+        @clickWid={{this.clickWid}}
+        @draggedWid={{this.draggedWid}}
+      >
+        <img src="{{this.rootURL}}img/gridstack-logo.svg" alt="gridstack" />
       </GridStackItem>
 
-      <GridStackItem @options={{hash x=0 y=3 w=4 h=2}}>
+      <GridStackItem
+        @options={{hash x=0 y=3 w=4 h=2}}
+        @onGridClick={{this.clicked}}
+        @onGridDrag={{this.dragged}}
+        @clickWid={{this.clickWid}}
+        @draggedWid={{this.draggedWid}}
+      >
         <pre><code class="htmlbars" {{highlight}}>
-&lt;GridStack&gt;
-  &lt;GridStackItem @options=\{{hash w=4 h=1}}&gt;
-    Item Content
-  &lt;/GridStackItem&gt;
-&lt;/GridStack&gt;
+            &lt;GridStack&gt; &lt;GridStackItem @options=\{{hash w=4 h=1}}&gt; Item Content &lt;/GridStackItem&gt;
+            &lt;/GridStack&gt;
           </code></pre>
       </GridStackItem>
 
-      <GridStackItem @options={{hash x=1 y=2 w=2 h=1}}>
+      <GridStackItem
+        @options={{hash x=1 y=2 w=2 h=1}}
+        @onGridClick={{this.clicked}}
+        @onGridDrag={{this.dragged}}
+        @clickWid={{this.clickWid}}
+        @draggedWid={{this.draggedWid}}
+      >
         <a href="https://gridstackjs.com/">gridstackjs.com</a>
       </GridStackItem>
 
-      <GridStackItem @options={{hash x=9 y=1 w=1 h=1}}>
+      <GridStackItem
+        @options={{hash x=9 y=1 w=1 h=1}}
+        @onGridClick={{this.clicked}}
+        @onGridDrag={{this.dragged}}
+        @clickWid={{this.clickWid}}
+        @draggedWid={{this.draggedWid}}
+      >
         <a href="https://github.com/yahoo/ember-gridstack"><DenaliIcon @icon="github" /></a>
       </GridStackItem>
 
       {{#each this.items as |item|}}
-        <GridStackItem @options={{hash w=1 h=1}}>
+        <GridStackItem
+          @options={{hash w=1 h=1}}
+          @onGridClick={{this.clicked}}
+          @onGridDrag={{this.dragged}}
+          @clickWid={{this.clickWid}}
+          @draggedWid={{this.draggedWid}}
+        >
           <DenaliButton @iconOnly={{true}} @icon="trash" @style="text" {{on "click" (fn this.removeItem item)}} />
         </GridStackItem>
       {{/each}}
