@@ -22,7 +22,6 @@ export default class GridStackItem extends Component {
   guid = guidFor(this);
   @tracked elm;
   @tracked gridStackComponent;
-  // @tracked enableResize = false;
 
   get element() {
     return document.getElementById(this.guid);
@@ -43,15 +42,5 @@ export default class GridStackItem extends Component {
   @action
   willDestroyNode() {
     this.gridStackComponent?.removeWidget(this.elm);
-  }
-
-  @action
-  click() {
-    this.args.onGridClick(this);
-  }
-
-  @action
-  drag() {
-    this.args.onGridDrag(this);
   }
 }

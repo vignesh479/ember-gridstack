@@ -1,15 +1,12 @@
 {{! Copyright 2021, Yahoo Inc }}
 <div
   id={{this.guid}}
-  class="grid-stack-item {{if (eq @clickWid this.guid) "currentGrid"}} {{if (eq @draggedWid this.guid) "draggedGrid"}}"
+  class="grid-stack-item"
   ...attributes
   {{gs-item-attributes @options}}
   {{did-insert this.setup}}
   {{did-update this.updateGridStack @options}}
   {{will-destroy this.willDestroyNode}}
-  {{on "click" this.click}}
-  {{on "drag" this.drag}}
-  {{on "dragend" this.click}}
 >
   <div class="grid-stack-item-content">
     {{yield this}}
