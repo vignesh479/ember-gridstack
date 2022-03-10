@@ -69,6 +69,7 @@
     "ember-source": "~3.28.0",
     "ember-source-channel-url": "^3.0.0",
     "ember-template-lint": "^3.6.0",
+    "ember-truth-helpers": "^3.0.0",
     "ember-try": "^1.4.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
@@ -108,7 +109,7 @@
     ]
   },
   "release": {
-    "repositoryUrl": "https://github.com/yahoo/ember-gridstack.git"
+    "repositoryUrl": "https://github.com/vignesh479/ember-gridstack.git"
   },
   "publishConfig": {
     "access": "public"

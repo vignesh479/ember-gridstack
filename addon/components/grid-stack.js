@@ -165,4 +165,9 @@ export default class GridStackComponent extends Component {
     }
     return this;
   }
+
+  // @action
+  // showResize(element, val) {
+  //   this.gridStack.resizable(element, val);
+  // }
 }
