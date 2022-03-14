@@ -10,6 +10,8 @@ export default class extends Controller {
 
   @tracked
   shouldFloat = true;
+  @tracked clickWid = '';
+  @tracked draggedWid = '';
 
   @action
   changeItems() {
@@ -26,5 +28,17 @@ export default class extends Controller {
   @action
   toggleFloat() {
     this.shouldFloat = !this.shouldFloat;
+  }
+
+  @action
+  clicked(ele) {
+    this.clickWid = ele.guid;
+    this.draggedWid = '';
+  }
+
+  @action
+  dragged(ele) {
+    this.clickWid = '';
+    this.draggedWid = ele.guid;
   }
 }
